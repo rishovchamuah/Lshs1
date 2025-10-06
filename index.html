@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAST Code - Future</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Event Section Styling */
+        #events {
+            margin-top: 30px;
+            padding: 12px;
+            background: linear-gradient(135deg, #f0f4c3, #c8e6c9);
+            border-radius: 10px;
+            box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        #events h2 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-align: center;
+            color: #000;
+        }
+
+        .event-item {
+            background: #ffffffb0;
+            margin: 4px 0;
+            padding: 6px 10px;
+            border-left: 4px solid green;
+            border-radius: 5px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <img src="logo2.png" class="logo">
+
+            <a onclick="window.location.href='fees.html'">Fees</a>
+            <a onclick="window.location.href='contact.html'">Contact</a>
+            <a onclick="window.location.href='help.html'">Help</a>
+            <a onclick="window.location.href='about.html'">About</a>
+            <a onclick="window.location.href='images.html'">Images</a>
+
+            <div>
+                <a href="https://eskooly.com/bb/signin.php" class="btn">Login</a>
+                <a href="#" class="btn">More</a>
+            </div>
+        </nav>
+
+        <div class="headline">
+            <h1><b>L.S.H.S</b></h1>
+        </div>
+
+        <div class="content">
+            <h2>Unlock Your <br> Future With us</h2>
+            <p>Since 1989, LITTLE STAR HIGH SCHOOL dedicated to shaping bright futures. Our mission is to<br>
+            provide a nurturing and inspiring environment where every student can achieve their full potential, <br>
+            develop lifelong skills, and grow into confident, responsible, and successful individuals. At LITTLE STAR HIGH<br>
+            SCHOOL, we believe in excellence in education, a love for learning, and a commitment to building a brighter tomorrow..</p>
+
+            <div class="hero-buttons">
+                <a href="about.html" class="btn know-more">Know More</a>
+                <a href="https://maps.app.goo.gl/PK18U9k56Vp3gXiR9" target="_blank" class="btn map-btn">Find Us on Map</a>
+            </div>
+
+            <!-- Event Section -->
+            <section id="events">
+                <h2>Upcoming Events</h2>
+                <div class="container">
+                 <div class="upcoming events">
+                <div id="event-list">
+                    <!-- Events will appear here automatically -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for automatic event updates -->
+    <script>
+        const events = [
+            { name: "Science Fair", date: "2025-10-15" },
+            { name: "Annual Sports Day", date: "2025-10-25" },
+            { name: "Parent-Teacher Meeting", date: "2025-11-05" },
+        ];
+
+        const eventList = document.getElementById("event-list");
+        const today = new Date();
+
+        events.forEach(event => {
+            const eventDate = new Date(event.date);
+            const diffTime = eventDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays <= 10 && diffDays >= 0) {
+                const div = document.createElement("div");
+                div.classList.add("event-item");
+                const day = ("0" + eventDate.getDate()).slice(-2);
+                const month = ("0" + (eventDate.getMonth() + 1)).slice(-2);
+                const year = eventDate.getFullYear();
+                div.textContent = `${event.name} on ${day}-${month}-${year}`;
+                eventList.appendChild(div);
+            }
+        });
+
+        if (!eventList.hasChildNodes()) {
+            eventList.innerHTML = "<p>No upcoming events in the next 10 days.</p>";
+        }
+    </script>
+</body>
+</html>

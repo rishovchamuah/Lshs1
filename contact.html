@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Little Star High School</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .contact-section {
+      max-width: 800px;
+      margin: 80px auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .contact-section h1 {
+      color: #2077ff;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .contact-section p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact-info {
+      margin: 25px 0;
+      text-align: left;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+    }
+
+    .message h2 {
+      margin-top: 40px;
+      color: #2077ff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      background-color: #222;
+      color: white;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #2077ff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2077ff;
+    }
+
+    .back-home {
+      margin-top: 40px;
+    }
+
+    .back-home a {
+      color: #2077ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-home a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section class="contact-section">
+    <h1>Contact Us</h1>
+    <p>If you have any questions, suggestions, or need any information about our school, we’re here to help you. Reach out to us through the following details:</p>
+
+    <div class="contact-info">
+      <p><strong>📍 Address:</strong> Little Star High School, Tengakhat 786103, Dibrugarh, Assam, India</p>
+      <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+      <p><strong>✉️ Email:</strong> littlestarhs@gmail.com</p>
+      <p><strong>🕘 Office Hours:</strong> Monday – Saturday | 9:00 AM – 2:30 PM</p>
+    </div>
+
+    <div class="message">
+      <h2>Send Us a Message</h2>
+      <form action="https://formspree.io/f/mnnqzvga" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="back-home">
+      <p><a href="index.html">← Back to Home</a></p>
+    </div>
+  </section>
+</body>
+</html>
